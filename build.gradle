@@ -16,7 +16,8 @@ buildscript {
 
     // app version
     ext.versions = [
-            applicationId    : "com.werb.okcurl",
+            libraryId    : "com.werb.okcurl",
+            applicationId    : "com.werb.okcurlsample",
             versionCode      : 1,
             versionName      : "0.0.1",
             minSdkVersion    : 19,
