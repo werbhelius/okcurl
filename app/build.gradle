@@ -20,6 +20,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:${lib.support_lib_version}"
-    androidTestImplementation "com.android.support.test:runner:${lib.test_runner_version}"
     implementation project(':library')
 }
