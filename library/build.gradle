@@ -30,3 +30,13 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "com.squareup.okhttp3:mockwebserver:${lib.okhttp}"
 }
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'werbhelius'
+    groupId = 'com.werb.okcurl'
+    artifactId = 'okcurl'
+    publishVersion = versions.versionName
+    desc = 'Curl log for okhttp!'
+    website = 'https://github.com/Werb/okcurl'
+}
