@@ -11,8 +11,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        request.setOnClickListener {
+        get.setOnClickListener {
             sendRequest(RequestFactory.TYPE_GET)
+        }
+
+        post.setOnClickListener {
+            sendRequest(RequestFactory.TYPE_POST)
+        }
+
+        delete.setOnClickListener {
+            sendRequest(RequestFactory.TYPE_DELETE)
         }
     }
 

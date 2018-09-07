@@ -1,7 +1,6 @@
 package com.werb.okcurlsample
 
 import okhttp3.RequestBody
-import okhttp3.CacheControl
 import okhttp3.MediaType
 import okhttp3.Request
 
@@ -10,8 +9,9 @@ import okhttp3.Request
  */
 object RequestFactory {
 
-    val TYPE_GET = "type_get"
-    val TYPE_POST = "type_post"
+    const val TYPE_GET = "type_get"
+    const val TYPE_POST = "type_post"
+    const val TYPE_DELETE = "type_delete"
 
     private val NEW_REPO_BODY = "{" +
         "  \"name\": \"Hello-World\"," +
@@ -26,7 +26,7 @@ object RequestFactory {
     private fun sampleGetRequest(): Request {
         return Request.Builder()
             .url("https://api.github.com/events")
-            .addHeader("Authorization", "token 20a66c4ac79e42b9fda983cf086de0340fc91a84")
+            .addHeader("Authorization", "token xxxx") // replace your github Personal access tokens
             .build()
     }
 
@@ -34,6 +34,15 @@ object RequestFactory {
         return Request.Builder()
             .url("https://api.github.com/user/repos")
             .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), NEW_REPO_BODY))
+            .addHeader("Authorization", "token xxxx") // replace your github Personal access tokens
+            .build()
+    }
+
+    private fun sampleDeleteRequest(): Request {
+        return Request.Builder()
+            .url("https://api.github.com/repos/Werb/Hello-World")
+            .delete()
+            .addHeader("Authorization", "token xxxx") // replace your github Personal access tokens
             .build()
     }
 
@@ -41,6 +50,7 @@ object RequestFactory {
         return when (type) {
             TYPE_GET -> sampleGetRequest()
             TYPE_POST -> samplePostRequest()
+            TYPE_DELETE -> sampleDeleteRequest()
             else -> throw IllegalArgumentException("Invalid request type")
         }
     }
