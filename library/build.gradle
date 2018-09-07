@@ -37,6 +37,6 @@ publish {
     groupId = 'com.werb.okcurl'
     artifactId = 'okcurl'
     publishVersion = versions.versionName
-    desc = 'Curl log for okhttp!'
+    desc = 'curl log for okhttp!'
     website = 'https://github.com/Werb/okcurl'
 }
