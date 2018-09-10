@@ -1,6 +1,10 @@
 # okcurl
 > curl log for okhttp!
 
+```gradle
+implementation 'com.werb.okcurl:okcurl:0.0.1'
+```
+
 add `OkCurl` Interceptor for okhttp
 
 ```kotlin
